@@ -9,21 +9,21 @@
     android:background="#FFFDE7">
 
     <Button
-        android:id="@+id/compare_nums_btn"
+        android:id="@+id/compare_num_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/compare_numbers"
         android:layout_marginBottom="16dp" />
 
     <Button
-        android:id="@+id/order_nums_btn"
+        android:id="@+id/order_num_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/order_numbers"
         android:layout_marginBottom="16dp" />
 
     <Button
-        android:id="@+id/compose_nums_btn"
+        android:id="@+id/compose_num_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/compose_numbers" />
