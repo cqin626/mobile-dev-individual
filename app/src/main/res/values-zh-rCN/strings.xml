@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">轻松数学</string>
+    <string name="compare_numbers">比较数字</string>
+    <string name="order_numbers">排列数字</string>
+    <string name="compose_numbers">组成数字</string>
+    <string name="toggle_locale">EN</string>
+</resources>

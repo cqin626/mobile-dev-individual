@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Math App</string>
+    <string name="app_name">Easy Math</string>
+    <string name="compare_numbers">Compare Numbers</string>
+    <string name="order_numbers">Order Numbers</string>
+    <string name="compose_numbers">Compose Numbers</string>
+    <string name="toggle_locale">中文</string>
 </resources>
