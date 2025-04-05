@@ -11,13 +11,12 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class CompareNumActivity extends AppCompatActivity {
-    Button leftBtn;
-    Button rightBtn;
-    ImageButton nextBtn;
-    TextView instruction;
-
-    TextView feedback;
-    boolean isPlayingGreater = false;
+    private Button leftBtn;
+    private Button rightBtn;
+    private ImageButton nextBtn;
+    private TextView instruction;
+    private TextView feedback;
+    private boolean isPlayingGreater = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

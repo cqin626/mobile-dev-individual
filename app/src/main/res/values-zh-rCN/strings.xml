@@ -19,4 +19,8 @@
     <string name="order_descending_correct_answer">太棒了！数字按逆序排列！</string>
     <string name="order_descending_wrong_answer">哎呀！数字不是按逆序排列</string>
     <string name="order_arrange_all_numbers">请在提交前排列好所有数字哦！</string>
+    <string name="compose_instruction">把数字组合在一起，以得到大数字</string>
+    <string name="compose_pick_two_nums">请挑选一对数字。</string>
+    <string name="compose_correct_answer">做得好！你成功组成了大数字！</string>
+    <string name="compose_wrong_answer">哎呀！这两个数字不能组合成大数字。</string>
 </resources>

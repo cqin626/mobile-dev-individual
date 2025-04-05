@@ -12,9 +12,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -77,6 +74,7 @@ public class OrderNumActivity extends AppCompatActivity {
         for (int i = 0; i < cardCount; i++) {
             View card = cardContainer.getChildAt(i);
             FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
+
             card.setOnLongClickListener(view -> {
                         view.startDragAndDrop(
                                 ClipData.newPlainText("", ""),
@@ -119,7 +117,6 @@ public class OrderNumActivity extends AppCompatActivity {
     }
 
     private void setupDragAndDropOnSlots() {
-
         for (int i = 0; i < cardCount; i++) {
             FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
 
@@ -165,7 +162,6 @@ public class OrderNumActivity extends AppCompatActivity {
     }
 
     private boolean isCorrectAnswer(List<Integer> submission) {
-
         return isPlayingAscending ?
                 IntStream
                         .range(0, submission.size() - 1)
