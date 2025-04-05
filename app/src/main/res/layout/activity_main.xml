@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FFFDE7"
     android:gravity="center"
-    android:padding="24dp"
-    android:background="#FFFDE7">
+    android:orientation="vertical"
+    android:padding="24dp">
 
     <Button
         android:id="@+id/compare_num_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/compare_numbers"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:text="@string/common_compare_numbers" />
 
     <Button
         android:id="@+id/order_num_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/order_numbers"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="16dp"
+        android:text="@string/common_order_numbers" />
 
     <Button
         android:id="@+id/compose_num_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/compose_numbers" />
+        android:text="@string/common_compose_numbers" />
 
     <Button
         android:id="@+id/button_toggle_locale"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/toggle_locale"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:text="@string/common_toggle_locale" />
 </LinearLayout>

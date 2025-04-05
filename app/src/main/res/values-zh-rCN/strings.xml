@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">轻松数学</string>
-    <string name="compare_numbers">比较数字</string>
-    <string name="order_numbers">排列数字</string>
-    <string name="compose_numbers">组成数字</string>
-    <string name="toggle_locale">EN</string>
+    <string name="common_compare_numbers">比较数字</string>
+    <string name="common_order_numbers">排列数字</string>
+    <string name="common_compose_numbers">组成数字</string>
+    <string name="common_toggle_locale">EN</string>
     <string name="common_unexpected_error">哎呀！出了一点问题。请让大人联系开发者。</string>
     <string name="common_submit">提交</string>
     <string name="compare_tap_bigger_num">点击较大的数字</string>
