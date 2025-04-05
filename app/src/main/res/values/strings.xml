@@ -3,12 +3,20 @@
     <string name="compare_numbers">Compare Numbers</string>
     <string name="order_numbers">Order Numbers</string>
     <string name="compose_numbers">Compose Numbers</string>
+    <string name="toggle_locale">中文</string>
+    <string name="common_unexpected_error">Oops! Something went wrong. Please ask an adult to contact the developer.</string>
+    <string name="common_submit">Submit</string>
     <string name="compare_tap_bigger_num">Tap the bigger number</string>
     <string name="compare_tap_smaller_num">Tap the smaller number</string>
     <string name="compare_num_bigger_correct_answer">Great job! You picked the bigger number!</string>
     <string name="compare_num_bigger_wrong_answer">Oops! That wasn’t the bigger number.</string>
     <string name="compare_num_smaller_correct_answer">Great job! You picked the smaller number!</string>
     <string name="compare_num_smaller_wrong_answer">Oops! That wasn’t the smaller number.</string>
-    <string name="common_unexpected_error">Oops! Something went wrong. Please ask an adult to contact the developer.</string>
-    <string name="toggle_locale">中文</string>
+    <string name="order_arrange_in_ascending">Arrange the numbers from left to right in ascending order</string>
+    <string name="order_arrange_in_descending">Arrange the numbers from left to right in descending order</string>
+    <string name="order_ascending_correct_answer">Great job! The numbers are in ascending order!</string>
+    <string name="order_ascending_wrong_answer">Oops! The numbers are not in ascending order.</string>
+    <string name="order_descending_correct_answer">Great job! The numbers are in descending order!</string>
+    <string name="order_descending_wrong_answer">Oops! The numbers are not in descending order.</string>
+    <string name="order_arrange_all_numbers">Please arrange all the numbers before you submit!</string>
 </resources>

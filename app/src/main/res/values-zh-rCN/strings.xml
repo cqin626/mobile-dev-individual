@@ -3,12 +3,20 @@
     <string name="compare_numbers">比较数字</string>
     <string name="order_numbers">排列数字</string>
     <string name="compose_numbers">组成数字</string>
+    <string name="toggle_locale">EN</string>
+    <string name="common_unexpected_error">哎呀！出了一点问题。请让大人联系开发者。</string>
+    <string name="common_submit">提交</string>
     <string name="compare_tap_bigger_num">点击较大的数字</string>
     <string name="compare_tap_smaller_num">点击较小的数字</string>
     <string name="compare_num_bigger_correct_answer">太棒了！你选对了更大的数字！</string>
     <string name="compare_num_bigger_wrong_answer">哦哦！那不是更大的数字。</string>
     <string name="compare_num_smaller_correct_answer">太棒了！你选对了更小的数字！</string>
     <string name="compare_num_smaller_wrong_answer">哦哦！那不是更小的数字。</string>
-    <string name="common_unexpected_error">哎呀！出了一点问题。请让大人联系开发者。</string>
-    <string name="toggle_locale">EN</string>
+    <string name="order_arrange_in_ascending">将数字从左到右按顺序排列</string>
+    <string name="order_arrange_in_descending">将数字从左到右按逆序排列</string>
+    <string name="order_ascending_correct_answer">太棒了！数字按顺序排列！</string>
+    <string name="order_ascending_wrong_answer">哎呀！数字不是按顺序排列</string>
+    <string name="order_descending_correct_answer">太棒了！数字按逆序排列！</string>
+    <string name="order_descending_wrong_answer">哎呀！数字不是按逆序排列</string>
+    <string name="order_arrange_all_numbers">请在提交前排列好所有数字哦！</string>
 </resources>
