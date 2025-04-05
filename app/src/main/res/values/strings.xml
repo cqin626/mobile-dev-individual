@@ -3,5 +3,12 @@
     <string name="compare_numbers">Compare Numbers</string>
     <string name="order_numbers">Order Numbers</string>
     <string name="compose_numbers">Compose Numbers</string>
+    <string name="compare_tap_bigger_num">Tap the bigger number</string>
+    <string name="compare_tap_smaller_num">Tap the smaller number</string>
+    <string name="compare_num_bigger_correct_answer">Great job! You picked the bigger number!</string>
+    <string name="compare_num_bigger_wrong_answer">Oops! That wasn’t the bigger number.</string>
+    <string name="compare_num_smaller_correct_answer">Great job! You picked the smaller number!</string>
+    <string name="compare_num_smaller_wrong_answer">Oops! That wasn’t the smaller number.</string>
+    <string name="common_unexpected_error">Oops! Something went wrong. Please ask an adult to contact the developer.</string>
     <string name="toggle_locale">中文</string>
 </resources>

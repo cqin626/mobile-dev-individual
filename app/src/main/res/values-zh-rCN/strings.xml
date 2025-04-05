@@ -3,5 +3,12 @@
     <string name="compare_numbers">比较数字</string>
     <string name="order_numbers">排列数字</string>
     <string name="compose_numbers">组成数字</string>
+    <string name="compare_tap_bigger_num">点击较大的数字</string>
+    <string name="compare_tap_smaller_num">点击较小的数字</string>
+    <string name="compare_num_bigger_correct_answer">太棒了！你选对了更大的数字！</string>
+    <string name="compare_num_bigger_wrong_answer">哦哦！那不是更大的数字。</string>
+    <string name="compare_num_smaller_correct_answer">太棒了！你选对了更小的数字！</string>
+    <string name="compare_num_smaller_wrong_answer">哦哦！那不是更小的数字。</string>
+    <string name="common_unexpected_error">哎呀！出了一点问题。请让大人联系开发者。</string>
     <string name="toggle_locale">EN</string>
 </resources>
