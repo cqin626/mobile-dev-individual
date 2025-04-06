@@ -30,4 +30,5 @@
     <string name="score_compare_num">比较数字: </string>
     <string name="score_order_num">排列数字: </string>
     <string name="score_compose_num">组成数字: </string>
+    <string name="score_delete_scores">重置分数</string>
 </resources>

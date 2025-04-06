@@ -27,7 +27,8 @@
     <string name="compose_correct_answer">Good job! You made the number!</string>
     <string name="compose_wrong_answer">Oops! These don’t make the big number.</string>
     <string name="score_title">My High Score Board</string>
-    <string name="score_compare_num">Compare Numbers: </string>
-    <string name="score_order_num">Order Numbers: </string>
-    <string name="score_compose_num">Compose Numbers: </string>
+    <string name="score_compare_num">Compare: </string>
+    <string name="score_order_num">Order: </string>
+    <string name="score_compose_num">Compose: </string>
+    <string name="score_delete_scores">Reset Scores</string>
 </resources>
