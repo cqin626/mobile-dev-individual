@@ -76,7 +76,8 @@
             android:layout_height="100dp"
             android:layout_marginBottom="4dp"
             android:background="#ADD8E6"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textSize="32sp" />
 
         <LinearLayout
             android:id="@+id/compose_slots_container"
@@ -114,25 +115,29 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
         </LinearLayout>
 

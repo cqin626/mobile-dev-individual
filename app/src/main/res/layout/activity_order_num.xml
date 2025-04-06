@@ -122,25 +122,29 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
             <TextView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#ADD8E6"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="22sp" />
 
         </LinearLayout>
 

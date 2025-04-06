@@ -85,8 +85,8 @@
                 android:layout_height="120dp"
                 android:layout_marginEnd="12dp"
                 android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:textSize="28sp" />
+                android:background="#ADD8E6"
+                android:textSize="36sp" />
 
             <Button
                 android:id="@+id/compare_right_num"
@@ -94,8 +94,8 @@
                 android:layout_height="120dp"
                 android:layout_marginStart="12dp"
                 android:layout_weight="1"
-                android:textColor="#FFFFFF"
-                android:textSize="28sp" />
+                android:background="#ADD8E6"
+                android:textSize="36sp" />
 
         </LinearLayout>
 
