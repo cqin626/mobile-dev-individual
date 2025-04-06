@@ -1,4 +1,4 @@
-package my.edu.utar.mathapp;
+package my.edu.utar.mathapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
+
+import my.edu.utar.mathapp.R;
 
 public class CompareNumActivity extends AppCompatActivity {
     private Button leftBtn;

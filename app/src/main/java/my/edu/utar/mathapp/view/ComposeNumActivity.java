@@ -1,4 +1,4 @@
-package my.edu.utar.mathapp;
+package my.edu.utar.mathapp.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,67 +14,75 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.IntStream;
 
-public class OrderNumActivity extends AppCompatActivity {
+import my.edu.utar.mathapp.R;
 
-    private LinearLayout cardContainer;
+public class ComposeNumActivity extends AppCompatActivity {
     private LinearLayout slotContainer;
+    private LinearLayout cardContainer;
+    private TextView targetNumCard;
     private Button submitButton;
-    private TextView instruction;
     private Toast currentToast;
-    int cardCount = 0;
-    boolean isPlayingAscending = false;
+    private int cardCount = 0;
+    private int targetNum = 0;
+    private final int COMBINATION_NUM = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_num);
+        setContentView(R.layout.activity_compose_num);
 
-        cardContainer = findViewById(R.id.order_cards_container);
-        slotContainer = findViewById(R.id.order_slots_container);
-        submitButton = findViewById(R.id.order_submit_btn);
-        instruction = findViewById(R.id.order_instruction);
-
-        // The number of cards is equal to the number of slots.
+        slotContainer = findViewById(R.id.compose_slots_container);
+        cardContainer = findViewById(R.id.compose_cards_container);
+        targetNumCard = findViewById(R.id.compose_target_num_card);
+        submitButton = findViewById(R.id.compose_submit_btn);
         cardCount = cardContainer.getChildCount();
 
         reloadGame();
-        setupLongClickListenerForCardsAndSlots();
+        setupLongClickListenerForCards();
+        setupLongClickListenerForSlots();
         setupDragAndDropOnCardContainer();
         setupDragAndDropOnSlots();
         setupOnClickListenerForSubmitButton();
     }
 
     private void reloadGame() {
-        initGameMode();
-        updateCardsWithRandomNumber();
+        initTargetNumber();
+        initCardNumbers();
     }
 
-    private void initGameMode() {
+    private void initTargetNumber() {
         Random random = new Random();
-
-        isPlayingAscending = random.nextBoolean();
-        instruction.setText(isPlayingAscending ? getString(R.string.order_arrange_in_ascending) : getString(R.string.order_arrange_in_descending));
+        targetNum = random.nextInt(1000);
+        targetNumCard.setText(String.valueOf(targetNum));
     }
 
-    private void updateCardsWithRandomNumber() {
+    private void initCardNumbers() {
+        List<Integer> numbers = new ArrayList<>();
         Random random = new Random();
+
+        // Generate combination that can make up target num
+        int x = random.nextInt(targetNum);
+        int y = targetNum - x;
+
+        numbers.add(x);
+        numbers.add(y);
+        numbers.add(random.nextInt(1000));
+        numbers.add(random.nextInt(1000));
+        Collections.shuffle(numbers);
 
         for (int i = 0; i < cardCount; i++) {
             TextView card = (TextView) cardContainer.getChildAt(i);
-            card.setText(String.valueOf(random.nextInt(1000)));
+            card.setText(String.valueOf(numbers.get(i)));
         }
     }
 
-    private void setupLongClickListenerForCardsAndSlots() {
-        // Ensuring that cards in slot and card container are draggable
-
+    private void setupLongClickListenerForCards() {
         for (int i = 0; i < cardCount; i++) {
             View card = cardContainer.getChildAt(i);
-            FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
 
             card.setOnLongClickListener(view -> {
                         view.startDragAndDrop(
@@ -86,6 +94,13 @@ public class OrderNumActivity extends AppCompatActivity {
                         return true;
                     }
             );
+        }
+    }
+
+    private void setupLongClickListenerForSlots() {
+        for (int i = 0; i < COMBINATION_NUM; i++) {
+            FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
+
             slot.setOnLongClickListener(view -> {
                 if (slot.getChildCount() > 0) {
                     View existingCard = slot.getChildAt(0);
@@ -118,7 +133,7 @@ public class OrderNumActivity extends AppCompatActivity {
     }
 
     private void setupDragAndDropOnSlots() {
-        for (int i = 0; i < cardCount; i++) {
+        for (int i = 0; i < COMBINATION_NUM; i++) {
             FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
 
             slot.setOnDragListener((v, event) -> {
@@ -126,17 +141,16 @@ public class OrderNumActivity extends AppCompatActivity {
                     View draggedView = (View) event.getLocalState();
                     ViewGroup originalParent = (ViewGroup) draggedView.getParent();
                     FrameLayout targetSlot = (FrameLayout) v;
+
                     if (originalParent != null) {
                         originalParent.removeView(draggedView);
                     }
-
                     // If slot already has a card, move it back to card container
                     if (targetSlot.getChildCount() > 0) {
                         View existingCard = targetSlot.getChildAt(0);
                         targetSlot.removeView(existingCard);
                         cardContainer.addView(existingCard);
                     }
-
                     targetSlot.addView(draggedView);
                     return true;
                 }
@@ -148,11 +162,11 @@ public class OrderNumActivity extends AppCompatActivity {
     private void setupOnClickListenerForSubmitButton() {
         submitButton.setOnClickListener(v -> {
             List<Integer> userSubmission = getSlotValues();
-            if (userSubmission.size() != cardCount) {
-                showToast(getString(R.string.order_arrange_all_numbers));
+            if (userSubmission.size() != COMBINATION_NUM) {
+                showToast(getString(R.string.compose_pick_two_nums));
             } else {
-                String correctFeedback = isPlayingAscending ? getString(R.string.order_ascending_correct_answer) : getString(R.string.order_descending_correct_answer);
-                String wrongFeedback = isPlayingAscending ? getString(R.string.order_ascending_wrong_answer) : getString(R.string.order_descending_wrong_answer);
+                String correctFeedback = getString(R.string.compose_correct_answer);
+                String wrongFeedback = getString(R.string.compose_wrong_answer);
                 String feedback = isCorrectAnswer(userSubmission) ? correctFeedback : wrongFeedback;
 
                 showToast(feedback);
@@ -163,33 +177,17 @@ public class OrderNumActivity extends AppCompatActivity {
     }
 
     private boolean isCorrectAnswer(List<Integer> submission) {
-        return isPlayingAscending ?
-                IntStream
-                        .range(0, submission.size() - 1)
-                        .allMatch(i -> submission.get(i) <= submission.get(i + 1))
-                :
-                IntStream
-                        .range(0, submission.size() - 1)
-                        .allMatch(i -> submission.get(i) >= submission.get(i + 1));
-
-    }
-
-    private void clearSlots() {
-        for (int i = 0; i < cardCount; i++) {
-            FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
-
-            if (slot.getChildCount() > 0) {
-                View card = slot.getChildAt(0);
-                slot.removeView(card);
-                cardContainer.addView(card);
-            }
+        int sum = 0;
+        for (int i = 0; i < COMBINATION_NUM; i++) {
+            sum += submission.get(i);
         }
+        return targetNum == sum;
     }
 
     private List<Integer> getSlotValues() {
         List<Integer> submittedValues = new ArrayList<>();
 
-        for (int i = 0; i < cardCount; i++) {
+        for (int i = 0; i < COMBINATION_NUM; i++) {
             FrameLayout currentSlot = (FrameLayout) slotContainer.getChildAt(i);
             if (currentSlot.getChildCount() > 0) {
                 View currentCard = currentSlot.getChildAt(0);
@@ -212,5 +210,17 @@ public class OrderNumActivity extends AppCompatActivity {
         }
         currentToast = Toast.makeText(getApplicationContext(), toastString, Toast.LENGTH_SHORT);
         currentToast.show();
+    }
+
+    private void clearSlots() {
+        for (int i = 0; i < COMBINATION_NUM; i++) {
+            FrameLayout slot = (FrameLayout) slotContainer.getChildAt(i);
+
+            if (slot.getChildCount() > 0) {
+                View card = slot.getChildAt(0);
+                slot.removeView(card);
+                cardContainer.addView(card);
+            }
+        }
     }
 }
