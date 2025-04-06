@@ -11,11 +11,10 @@ import java.util.Random;
 
 import my.edu.utar.mathapp.R;
 
-public class CompareNumActivity extends AppCompatActivity {
+public class CompareNumActivity extends BaseActivity {
     private Button leftBtn;
     private Button rightBtn;
     private TextView instruction;
-    private Toast currentToast;
     private boolean isPlayingGreater = false;
 
     @Override
@@ -74,13 +73,5 @@ public class CompareNumActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         });
-    }
-
-    private void showToast(String toastString) {
-        if (currentToast != null) {
-            currentToast.cancel();
-        }
-        currentToast = Toast.makeText(getApplicationContext(), toastString, Toast.LENGTH_SHORT);
-        currentToast.show();
     }
 }

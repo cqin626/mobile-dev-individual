@@ -20,12 +20,11 @@ import java.util.Random;
 
 import my.edu.utar.mathapp.R;
 
-public class ComposeNumActivity extends AppCompatActivity {
+public class ComposeNumActivity extends BaseActivity {
     private LinearLayout slotContainer;
     private LinearLayout cardContainer;
     private TextView targetNumCard;
     private Button submitButton;
-    private Toast currentToast;
     private int cardCount = 0;
     private int targetNum = 0;
     private final int COMBINATION_NUM = 2;
@@ -202,14 +201,6 @@ public class ComposeNumActivity extends AppCompatActivity {
             }
         }
         return submittedValues;
-    }
-
-    private void showToast(String toastString) {
-        if (currentToast != null) {
-            currentToast.cancel();
-        }
-        currentToast = Toast.makeText(getApplicationContext(), toastString, Toast.LENGTH_SHORT);
-        currentToast.show();
     }
 
     private void clearSlots() {

@@ -20,13 +20,12 @@ import java.util.stream.IntStream;
 
 import my.edu.utar.mathapp.R;
 
-public class OrderNumActivity extends AppCompatActivity {
+public class OrderNumActivity extends BaseActivity {
 
     private LinearLayout cardContainer;
     private LinearLayout slotContainer;
     private Button submitButton;
     private TextView instruction;
-    private Toast currentToast;
     int cardCount = 0;
     boolean isPlayingAscending = false;
 
@@ -206,13 +205,5 @@ public class OrderNumActivity extends AppCompatActivity {
             }
         }
         return submittedValues;
-    }
-
-    private void showToast(String toastString) {
-        if (currentToast != null) {
-            currentToast.cancel();
-        }
-        currentToast = Toast.makeText(getApplicationContext(), toastString, Toast.LENGTH_SHORT);
-        currentToast.show();
     }
 }
