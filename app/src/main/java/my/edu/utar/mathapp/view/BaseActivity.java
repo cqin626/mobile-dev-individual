@@ -64,8 +64,12 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void incrementScore(int by, String module) {
+        int currentHighScore = dataSource.getInt(module, 0);
+
         score += by;
-        dataSource.saveInt(module, score);
+        if (score > currentHighScore) {
+            dataSource.saveInt(module, score);
+        }
     }
 
     protected void applyRetryButtonStyle(FButton btn) {
@@ -73,6 +77,15 @@ public class BaseActivity extends AppCompatActivity {
 
         btn.setTypeface(customFont);
         btn.setButtonColor(0xFFEE4B2B);
+        btn.setShadowHeight(32);
+        btn.setCornerRadius(32);
+    }
+
+    protected void applySubmitButtonStyle(FButton btn) {
+        final Typeface customFont = ResourcesCompat.getFont(this, R.font.noto_sans_semi_bold);
+
+        btn.setTypeface(customFont);
+        btn.setButtonColor(0xFF2E8BC0);
         btn.setShadowHeight(32);
         btn.setCornerRadius(32);
     }

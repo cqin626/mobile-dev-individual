@@ -18,14 +18,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.IntStream;
 
+import info.hoang8f.widget.FButton;
 import my.edu.utar.mathapp.R;
 
 public class OrderNumActivity extends BaseActivity {
 
     private LinearLayout cardContainer;
     private LinearLayout slotContainer;
-    private Button submitButton;
+    private FButton submitButton;
+    private FButton retryBtn;
     private TextView instruction;
+    private TextView scoreLabel;
     int cardCount = 0;
     boolean isPlayingAscending = false;
 
@@ -40,7 +43,9 @@ public class OrderNumActivity extends BaseActivity {
         cardContainer = findViewById(R.id.order_cards_container);
         slotContainer = findViewById(R.id.order_slots_container);
         submitButton = findViewById(R.id.order_submit_btn);
+        retryBtn = findViewById(R.id.retry_btn);
         instruction = findViewById(R.id.order_instruction);
+        scoreLabel = findViewById(R.id.score_value);
 
         // The number of cards is equal to the number of slots.
         cardCount = cardContainer.getChildCount();
@@ -49,11 +54,13 @@ public class OrderNumActivity extends BaseActivity {
         setupLongClickListenerForCardsAndSlots();
         setupDragAndDropOnCardContainer();
         setupDragAndDropOnSlots();
-        setupOnClickListenerForSubmitButton();
+        initSubmitBtn();
+        initRetryBtn();
     }
 
     private void reloadGame() {
         initGameMode();
+        scoreLabel.setText(String.valueOf(score));
         updateCardsWithRandomNumber();
     }
 
@@ -149,6 +156,11 @@ public class OrderNumActivity extends BaseActivity {
         }
     }
 
+    private void initSubmitBtn() {
+        applySubmitButtonStyle(submitButton);
+        setupOnClickListenerForSubmitButton();
+    }
+
     private void setupOnClickListenerForSubmitButton() {
         submitButton.setOnClickListener(v -> {
             List<Integer> userSubmission = getSlotValues();
@@ -157,11 +169,20 @@ public class OrderNumActivity extends BaseActivity {
             } else {
                 String correctFeedback = isPlayingAscending ? getString(R.string.order_ascending_correct_answer) : getString(R.string.order_descending_correct_answer);
                 String wrongFeedback = isPlayingAscending ? getString(R.string.order_ascending_wrong_answer) : getString(R.string.order_descending_wrong_answer);
-                String feedback = isCorrectAnswer(userSubmission) ? correctFeedback : wrongFeedback;
+                boolean isCorrect = isCorrectAnswer(userSubmission);
+                String feedback = isCorrect ? correctFeedback : wrongFeedback;
 
                 showToast(feedback);
-                clearSlots();
-                reloadGame();
+
+                if (isCorrect) {
+                    incrementScore(1, "order_num");
+                    clearSlots();
+                    reloadGame();
+                } else {
+                    submitButton.setEnabled(false);
+                    submitButton.setAlpha(0.5f);
+                    retryBtn.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
@@ -208,5 +229,21 @@ public class OrderNumActivity extends BaseActivity {
             }
         }
         return submittedValues;
+    }
+
+    private void initRetryBtn() {
+        applyRetryButtonStyle(retryBtn);
+        setupOnClickListenerForRetryBtn();
+    }
+
+    private void setupOnClickListenerForRetryBtn() {
+        retryBtn.setOnClickListener(v -> {
+            score = 0;
+            submitButton.setEnabled(true);
+            submitButton.setAlpha(1f);
+            retryBtn.setVisibility(View.GONE);
+            clearSlots();
+            reloadGame();
+        });
     }
 }

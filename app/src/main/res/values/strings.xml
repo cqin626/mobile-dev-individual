@@ -14,8 +14,8 @@
     <string name="compare_num_bigger_wrong_answer">Oops! That wasn’t the bigger number.</string>
     <string name="compare_num_smaller_correct_answer">Great job! You picked the smaller number!</string>
     <string name="compare_num_smaller_wrong_answer">Oops! That wasn’t the smaller number.</string>
-    <string name="order_arrange_in_ascending">Arrange the numbers from left to right in ascending order</string>
-    <string name="order_arrange_in_descending">Arrange the numbers from left to right in descending order</string>
+    <string name="order_arrange_in_ascending">Put numbers in ascending order</string>
+    <string name="order_arrange_in_descending">Put numbers in descending order</string>
     <string name="order_ascending_correct_answer">Great job! The numbers are in ascending order!</string>
     <string name="order_ascending_wrong_answer">Oops! The numbers are not in ascending order.</string>
     <string name="order_descending_correct_answer">Great job! The numbers are in descending order!</string>

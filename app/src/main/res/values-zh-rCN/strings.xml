@@ -14,8 +14,8 @@
     <string name="compare_num_bigger_wrong_answer">哦哦！那不是更大的数字。</string>
     <string name="compare_num_smaller_correct_answer">太棒了！你选对了更小的数字！</string>
     <string name="compare_num_smaller_wrong_answer">哦哦！那不是更小的数字。</string>
-    <string name="order_arrange_in_ascending">将数字从左到右按顺序排列</string>
-    <string name="order_arrange_in_descending">将数字从左到右按逆序排列</string>
+    <string name="order_arrange_in_ascending">将数字按顺序排列</string>
+    <string name="order_arrange_in_descending">将数字按逆序排列</string>
     <string name="order_ascending_correct_answer">太棒了！数字按顺序排列！</string>
     <string name="order_ascending_wrong_answer">哎呀！数字不是按顺序排列</string>
     <string name="order_descending_correct_answer">太棒了！数字按逆序排列！</string>
