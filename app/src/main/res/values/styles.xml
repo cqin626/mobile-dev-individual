@@ -13,4 +13,9 @@
         <item name="android:textViewStyle">@style/EnglishFontStyle</item>
         <item name="android:buttonStyle">@style/EnglishButtonStyle</item>
     </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
