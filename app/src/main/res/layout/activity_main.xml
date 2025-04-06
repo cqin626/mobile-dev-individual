@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/common_compare_numbers"
-        android:textColor="#003366"
         android:textSize="20sp" />
 
     <info.hoang8f.widget.FButton
@@ -22,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/common_order_numbers"
-        android:textColor="#003366"
         android:textSize="20sp" />
 
     <info.hoang8f.widget.FButton
@@ -31,7 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="@string/common_compose_numbers"
-        android:textColor="#003366"
         android:textSize="20sp" />
 
     <Button

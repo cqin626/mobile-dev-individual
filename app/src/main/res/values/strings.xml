@@ -6,6 +6,8 @@
     <string name="common_toggle_locale">中文</string>
     <string name="common_unexpected_error">Oops! Something went wrong. Please ask an adult to contact the developer.</string>
     <string name="common_submit">Submit</string>
+    <string name="common_score">Score: </string>
+    <string name="common_retry">Retry</string>
     <string name="compare_tap_bigger_num">Tap the bigger number</string>
     <string name="compare_tap_smaller_num">Tap the smaller number</string>
     <string name="compare_num_bigger_correct_answer">Great job! You picked the bigger number!</string>

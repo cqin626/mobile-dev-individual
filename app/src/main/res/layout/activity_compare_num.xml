@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background_with_opacity"
@@ -10,16 +11,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/back_button"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_gravity="start"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/back_button_background"
-            android:scaleType="centerInside"
-            android:src="@drawable/left_arrow" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <ImageButton
+                android:id="@+id/back_button"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/back_button_background"
+                android:scaleType="centerInside"
+                android:src="@drawable/left_arrow" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/common_score"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/score_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="2"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -70,6 +100,15 @@
                 android:textSize="28sp" />
 
         </LinearLayout>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/retry_btn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/common_retry"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
     </LinearLayout>
 
