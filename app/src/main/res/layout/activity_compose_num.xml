@@ -3,87 +3,115 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_background_with_opacity"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/compose_instruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:padding="16dp"
-        android:text="@string/compose_instruction"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/compose_target_num_card"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#ADD8E6"
-        android:gravity="center" />
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/back_button_background"
+            android:scaleType="centerInside"
+            android:src="@drawable/left_arrow" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/compose_slots_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:gravity="top|center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
 
-        <FrameLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="8dp"
-            android:background="#808080" />
+        <TextView
+            android:id="@+id/compose_instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:padding="16dp"
+            android:text="@string/compose_instruction"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-        <FrameLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_margin="8dp"
-            android:background="#808080" />
+        <TextView
+            android:id="@+id/compose_target_num_card"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="#ADD8E6"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/compose_slots_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="#808080" />
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:background="#808080" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/compose_cards_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#8F6251"
+            android:minHeight="60dp"
+            android:orientation="horizontal">
+
+            <!-- Number cards go here -->
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ADD8E6"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ADD8E6"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ADD8E6"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#ADD8E6"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/compose_submit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/common_submit" />
+
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/compose_cards_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#8F6251"
-        android:minHeight="60dp"
-        android:orientation="horizontal">
-
-        <!-- Number cards go here -->
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ADD8E6"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ADD8E6"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ADD8E6"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:background="#ADD8E6"
-            android:gravity="center" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/compose_submit_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/common_submit" />
 
 </LinearLayout>

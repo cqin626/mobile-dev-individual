@@ -34,6 +34,9 @@ public class ComposeNumActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose_num);
 
+        toolbar = findViewById(R.id.toolbar);
+        setupToolbarWithBackButton();
+
         slotContainer = findViewById(R.id.compose_slots_container);
         cardContainer = findViewById(R.id.compose_cards_container);
         targetNumCard = findViewById(R.id.compose_target_num_card);

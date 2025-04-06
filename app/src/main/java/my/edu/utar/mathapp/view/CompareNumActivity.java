@@ -22,6 +22,9 @@ public class CompareNumActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compare_num);
 
+        toolbar = findViewById(R.id.toolbar);
+        setupToolbarWithBackButton();
+
         leftBtn = findViewById(R.id.compare_left_num);
         rightBtn = findViewById(R.id.compare_right_num);
         instruction = findViewById(R.id.compare_instruction);

@@ -34,6 +34,9 @@ public class OrderNumActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_num);
 
+        toolbar = findViewById(R.id.toolbar);
+        setupToolbarWithBackButton();
+
         cardContainer = findViewById(R.id.order_cards_container);
         slotContainer = findViewById(R.id.order_slots_container);
         submitButton = findViewById(R.id.order_submit_btn);
