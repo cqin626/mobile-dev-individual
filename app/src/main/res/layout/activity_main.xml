@@ -2,30 +2,37 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFDE7"
+    android:background="@drawable/app_background_with_opacity"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="24dp">
 
-    <Button
+    <info.hoang8f.widget.FButton
         android:id="@+id/compare_num_btn"
-        android:layout_width="match_parent"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/common_compare_numbers" />
+        android:layout_margin="10dp"
+        android:text="@string/common_compare_numbers"
+        android:textColor="#003366"
+        android:textSize="20sp" />
 
-    <Button
+    <info.hoang8f.widget.FButton
         android:id="@+id/order_num_btn"
-        android:layout_width="match_parent"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/common_order_numbers" />
+        android:layout_margin="10dp"
+        android:text="@string/common_order_numbers"
+        android:textColor="#003366"
+        android:textSize="20sp" />
 
-    <Button
+    <info.hoang8f.widget.FButton
         android:id="@+id/compose_num_btn"
-        android:layout_width="match_parent"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
-        android:text="@string/common_compose_numbers" />
+        android:layout_margin="10dp"
+        android:text="@string/common_compose_numbers"
+        android:textColor="#003366"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button_toggle_locale"

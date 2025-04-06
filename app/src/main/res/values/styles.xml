@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="EnglishFontStyle">
+        <item name="android:fontFamily">@font/noto_sans_semi_bold</item>
+    </style>
+
+    <style name="EnglishButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:fontFamily">@font/noto_sans_semi_bold</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textViewStyle">@style/EnglishFontStyle</item>
+        <item name="android:buttonStyle">@style/EnglishButtonStyle</item>
+    </style>
+</resources>

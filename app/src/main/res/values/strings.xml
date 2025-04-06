@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Easy Math</string>
-    <string name="common_compare_numbers">Compare Numbers</string>
-    <string name="common_order_numbers">Order Numbers</string>
-    <string name="common_compose_numbers">Compose Numbers</string>
+    <string name="common_compare_numbers">Compare</string>
+    <string name="common_order_numbers">Order</string>
+    <string name="common_compose_numbers">Compose</string>
     <string name="common_toggle_locale">中文</string>
     <string name="common_unexpected_error">Oops! Something went wrong. Please ask an adult to contact the developer.</string>
     <string name="common_submit">Submit</string>
