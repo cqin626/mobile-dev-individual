@@ -21,7 +21,7 @@
     <string name="order_descending_correct_answer">Great job! The numbers are in descending order!</string>
     <string name="order_descending_wrong_answer">Oops! The numbers are not in descending order.</string>
     <string name="order_arrange_all_numbers">Please arrange all the numbers before you submit!</string>
-    <string name="compose_instruction">Put the numbers together to match the big number.</string>
+    <string name="compose_instruction">Make the big number</string>
     <string name="compose_pick_two_nums">Please pick two numbers.</string>
     <string name="compose_correct_answer">Good job! You made the number!</string>
     <string name="compose_wrong_answer">Oops! These don’t make the big number.</string>

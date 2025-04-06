@@ -18,13 +18,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import info.hoang8f.widget.FButton;
 import my.edu.utar.mathapp.R;
 
 public class ComposeNumActivity extends BaseActivity {
     private LinearLayout slotContainer;
     private LinearLayout cardContainer;
     private TextView targetNumCard;
-    private Button submitButton;
+    private TextView scoreLabel;
+    private FButton submitButton;
+    private FButton retryBtn;
     private int cardCount = 0;
     private int targetNum = 0;
     private final int COMBINATION_NUM = 2;
@@ -40,7 +43,9 @@ public class ComposeNumActivity extends BaseActivity {
         slotContainer = findViewById(R.id.compose_slots_container);
         cardContainer = findViewById(R.id.compose_cards_container);
         targetNumCard = findViewById(R.id.compose_target_num_card);
+        scoreLabel = findViewById(R.id.score_value);
         submitButton = findViewById(R.id.compose_submit_btn);
+        retryBtn = findViewById(R.id.retry_btn);
         cardCount = cardContainer.getChildCount();
 
         reloadGame();
@@ -48,11 +53,13 @@ public class ComposeNumActivity extends BaseActivity {
         setupLongClickListenerForSlots();
         setupDragAndDropOnCardContainer();
         setupDragAndDropOnSlots();
-        setupOnClickListenerForSubmitButton();
+        initSubmitButton();
+        initRetryBtn();
     }
 
     private void reloadGame() {
         initTargetNumber();
+        scoreLabel.setText(String.valueOf(score));
         initCardNumbers();
     }
 
@@ -161,6 +168,11 @@ public class ComposeNumActivity extends BaseActivity {
         }
     }
 
+    private void initSubmitButton() {
+        applySubmitButtonStyle(submitButton);
+        setupOnClickListenerForSubmitButton();
+    }
+
     private void setupOnClickListenerForSubmitButton() {
         submitButton.setOnClickListener(v -> {
             List<Integer> userSubmission = getSlotValues();
@@ -169,11 +181,20 @@ public class ComposeNumActivity extends BaseActivity {
             } else {
                 String correctFeedback = getString(R.string.compose_correct_answer);
                 String wrongFeedback = getString(R.string.compose_wrong_answer);
-                String feedback = isCorrectAnswer(userSubmission) ? correctFeedback : wrongFeedback;
+                boolean isCorrect = isCorrectAnswer(userSubmission);
+                String feedback = isCorrect ? correctFeedback : wrongFeedback;
 
                 showToast(feedback);
-                clearSlots();
-                reloadGame();
+
+                if (isCorrect) {
+                    incrementScore(1, "compose_num");
+                    clearSlots();
+                    reloadGame();
+                } else {
+                    submitButton.setEnabled(false);
+                    submitButton.setAlpha(0.5f);
+                    retryBtn.setVisibility(View.VISIBLE);
+                }
             }
         });
     }
@@ -216,5 +237,21 @@ public class ComposeNumActivity extends BaseActivity {
                 cardContainer.addView(card);
             }
         }
+    }
+
+    private void initRetryBtn() {
+        applyRetryButtonStyle(retryBtn);
+        setupOnClickListenerForRetryBtn();
+    }
+
+    private void setupOnClickListenerForRetryBtn() {
+        retryBtn.setOnClickListener(v -> {
+            score = 0;
+            submitButton.setEnabled(true);
+            submitButton.setAlpha(1f);
+            retryBtn.setVisibility(View.GONE);
+            clearSlots();
+            reloadGame();
+        });
     }
 }
