@@ -30,4 +30,92 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:text="@string/score_title"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/score_compare_num"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/score_compare_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/score_order_num"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/score_order_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/score_compose_num"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/score_compose_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textSize="24sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
 </LinearLayout>
