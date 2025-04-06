@@ -8,6 +8,7 @@
     <string name="common_submit">Submit</string>
     <string name="common_score">Score: </string>
     <string name="common_retry">Retry</string>
+    <string name="common_scores">Scores</string>
     <string name="compare_tap_bigger_num">Tap the bigger number</string>
     <string name="compare_tap_smaller_num">Tap the smaller number</string>
     <string name="compare_num_bigger_correct_answer">Great job! You picked the bigger number!</string>

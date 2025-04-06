@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private FButton compareNumBtn;
     private FButton orderNumBtn;
     private FButton composeNumBtn;
-    private Button toggleLocaleBtn;
-
+    private FButton viewScoresBtn;
+    private FButton toggleLocaleBtn;
     private SharedPreferencesDataSource dataSource;
 
     @Override
@@ -43,27 +43,32 @@ public class MainActivity extends AppCompatActivity {
         orderNumBtn = findViewById(R.id.order_num_btn);
         composeNumBtn = findViewById(R.id.compose_num_btn);
         toggleLocaleBtn = findViewById(R.id.button_toggle_locale);
+        viewScoresBtn = findViewById(R.id.view_scores_btn);
 
         applySavedLocale();
 
         setupNavigationButtons();
-        styleNavigationButtons();
+        styleMenuButtons();
         setupLocaleToggle();
-
     }
 
     private void setupNavigationButtons() {
         compareNumBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CompareNumActivity.class)));
         orderNumBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, OrderNumActivity.class)));
         composeNumBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ComposeNumActivity.class)));
+        viewScoresBtn.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ViewScoresActivity.class)));
     }
 
-    private void styleNavigationButtons() {
+    private void styleMenuButtons() {
         final Typeface customFont = ResourcesCompat.getFont(this, R.font.noto_sans_semi_bold);
-        FButton[] navButtons = new FButton[]{compareNumBtn, orderNumBtn, composeNumBtn};
+        FButton[] navButtons = new FButton[]{compareNumBtn, orderNumBtn, composeNumBtn, toggleLocaleBtn, viewScoresBtn};
         for (FButton currentNavButton : navButtons) {
+            if (currentNavButton == toggleLocaleBtn || currentNavButton == viewScoresBtn) {
+                currentNavButton.setButtonColor(0xFFECECEC);
+            } else {
+                currentNavButton.setButtonColor(0xFFFFFFFF);
+            }
             currentNavButton.setTypeface(customFont);
-            currentNavButton.setButtonColor(0xFFFFFFFF);
             currentNavButton.setShadowHeight(32);
             currentNavButton.setCornerRadius(32);
         }

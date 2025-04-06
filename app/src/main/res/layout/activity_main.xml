@@ -31,10 +31,38 @@
         android:text="@string/common_compose_numbers"
         android:textSize="20sp" />
 
-    <Button
-        android:id="@+id/button_toggle_locale"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/common_toggle_locale" />
+    <LinearLayout
+        android:layout_width="225dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:gravity="top|center_horizontal"
+        android:orientation="horizontal">
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/view_scores_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="@string/common_scores"
+            android:textSize="20sp" />
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/button_toggle_locale"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:text="@string/common_toggle_locale"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
 </LinearLayout>

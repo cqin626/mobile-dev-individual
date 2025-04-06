@@ -8,6 +8,7 @@
     <string name="common_submit">提交</string>
     <string name="common_score">分数: </string>
     <string name="common_retry">重试</string>
+    <string name="common_scores">分数</string>
     <string name="compare_tap_bigger_num">点击较大的数字</string>
     <string name="compare_tap_smaller_num">点击较小的数字</string>
     <string name="compare_num_bigger_correct_answer">太棒了！你选对了更大的数字！</string>
